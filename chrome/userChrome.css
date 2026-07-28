@@ -1,0 +1,83 @@
+/* ===========================================================================
+ * userChrome.css – Oberfläche von Firefox für den Unterricht beruhigen
+ * Florian Loyns · Stand: 28. Juli 2026
+ *
+ * VORAUSSETZUNG
+ * Diese Datei wird nur gelesen, wenn die Einstellung
+ *
+ *     toolkit.legacyUserProfileCustomizations.stylesheets = true
+ *
+ * gesetzt ist. Das erledigt die mitgelieferte user.js (Abschnitt 13); von
+ * Hand geht es über about:config. Die Datei muss im Unterordner "chrome"
+ * des Profilordners liegen und genau "userChrome.css" heißen.
+ * Änderungen greifen erst nach einem Neustart von Firefox.
+ *
+ * EINSCHRÄNKUNG
+ * Mozilla unterstützt diese Anpassung ausdrücklich nicht. Die verwendeten
+ * IDs sind interne Bezeichner der Firefox-Oberfläche und können sich mit
+ * jeder Version ändern. Wenn nach einem Update etwas seltsam aussieht, ist
+ * diese Datei der erste Verdächtige: umbenennen, Firefox starten, prüfen.
+ * Deshalb steht hier nur wenig – und das meiste davon auskommentiert.
+ * ======================================================================== */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+/* --- Aktiv -------------------------------------------------------------- */
+
+/* Den Knopf „Firefox View“ ganz links neben den Tabs entfernen. Er sitzt
+ * genau dort, wo man beim schnellen Griff zum ersten Tab hinklickt, und
+ * öffnet dann eine ganzseitige Übersicht mitten im Vortrag. */
+#firefox-view-button {
+  display: none !important;
+}
+
+
+/* --- Nach Bedarf: Kommentarzeichen entfernen ---------------------------- */
+
+/* Tab-Leiste ganz ausblenden. Sinnvoll, wenn der Vortrag ohnehin im
+ * Vollbild läuft und nur ein Tab offen ist. Danach lässt sich zwischen Tabs
+ * nur noch mit Strg+Tab bzw. Strg+1…9 wechseln – das sollte man vorher
+ * einmal geübt haben. */
+/*
+#TabsToolbar {
+  visibility: collapse !important;
+}
+*/
+
+/* Schrift der Bedienoberfläche vergrößern, damit Adressleiste und
+ * Tab-Titel aus der letzten Reihe lesbar bleiben. Der Wert ist Geschmack
+ * und Projektorgröße; 12pt bis 14pt sind übliche Ausgangspunkte.
+ * Wirkt nicht auf Webseiten – dafür ist der Zoom (Strg + +) zuständig. */
+/*
+#navigator-toolbox {
+  font-size: 12pt !important;
+}
+*/
+
+/* Den Menüknopf mit den drei Strichen ausblenden, wenn er beim Zeigen im
+ * Weg ist. Alle Menüpunkte bleiben über die Menüleiste (Alt-Taste)
+ * erreichbar. */
+/*
+#PanelUI-menu-button {
+  display: none !important;
+}
+*/
+
+/* Die Übersicht „Alle Tabs anzeigen“ am rechten Rand der Tab-Leiste
+ * entfernen. */
+/*
+#alltabs-button {
+  display: none !important;
+}
+*/
+
+/* Den Erweiterungs-Knopf (Puzzleteil) ausblenden. Erst sinnvoll, wenn die
+ * Erweiterungen (etwa uBlock Origin) fertig eingerichtet sind und keine
+ * Bedienung mehr brauchen – ihre Panels sind danach nicht mehr erreichbar,
+ * die Verwaltung bleibt über about:addons möglich. */
+/*
+#unified-extensions-button {
+  display: none !important;
+}
+*/
